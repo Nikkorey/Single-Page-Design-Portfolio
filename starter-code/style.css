@@ -1,0 +1,152 @@
+:root {
+  /* color */
+  --clr-primary-100: #fff7f0;
+
+  --clr-second-200: #755cde;
+  --clr-second-300: #f6a560;
+  --clr-second-400: #f39e9e;
+  --clr-second-500: #eb7565;
+  --clr-second-600: #61c4b7;
+  --clr-second-700: #552049;
+  --clr-second-800: #7a746e;
+  --clr-second-900: #030303;
+
+  /* font size */
+  --fs-s: 1.5rem;
+  --fs-m: 1.625rem;
+  --fs-l: 2.25rem;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.3;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+  font-family: var(--ff-serif);
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Utility */
+.container {
+  max-width: 1111px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.img {
+  width: 100%;
+}
+
+.br-10 {
+  border-radius: 10px;
+}
+
+/* Typography */
+
+/* body */
+body {
+  background-color: var(--clr-primary-100);
+}
+
+/* Intro Section */
+
+.intro__title {
+  font-size: var(--fs-l);
+}
+
+.intro__card {
+  display: grid;
+  height: 1164px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1.5rem;
+}
+
+.intro__card-design {
+  grid-area: 1 / 1 / 3 / 3;
+  background-color: var(--clr-second-200);
+}
+
+.intro__card-ui {
+  background-color: var(--clr-second-300);
+}
+
+.intro__card-apps {
+  background-color: var(--clr-second-400);
+}
+
+.intro__card-illustration {
+  background-color: #eb7565;
+}
+
+.intro__card-photo {
+  background-color: var(--clr-second-600);
+}
+.intro__card-motion {
+  background-color: var(--clr-second-700);
+}
+
+.intro__card-illustration,
+.intro__card-photo,
+.intro__card-motion {
+  grid-column: 1 / -1;
+}
+
+/* Profile Section */
+
+.profile__title {
+  font-size: var(--fs-m);
+}
+
+/* Work Section */
+
+.work__title {
+  font-size: var(--fs-s);
+}
+
+/* call to action */
+.cta__details {
+  background-color: var(--clr-second-900);
+  color: var(--clr-primary-100);
+  border-radius: 10px;
+}
+
+.cta__title {
+  font-size: var(--fs-m);
+}
+
+/* Footer */
