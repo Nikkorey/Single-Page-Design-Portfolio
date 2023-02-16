@@ -1,23 +1,63 @@
 :root {
   /* color */
-  --clr-primary-100: #fff7f0;
+  --clr-bg: #fff7f0;
+  --clr-btn-font: var(--clr-bg);
 
-  --clr-second-200: #755cde;
-  --clr-second-300: #f6a560;
-  --clr-second-400: #f39e9e;
-  --clr-second-500: #eb7565;
-  --clr-second-600: #61c4b7;
-  --clr-second-700: #552049;
-  --clr-second-800: #7a746e;
-  --clr-second-900: #030303;
+  --clr-white: #fff;
+
+  --clr-accent-200: #755cde;
+  --clr-accent-300: #f6a560;
+  --clr-accent-400: #f39e9e;
+  --clr-accent-500: #eb7565;
+  --clr-accent-600: #61c4b7;
+  --clr-accent-700: #552049;
+  --clr-accent-800: #7a746e;
+  --clr-accent-900: #030303;
+
+  --text-neutral-100: var(--clr-bg);
+  --text-neutral-200: var(--clr-accent-800);
 
   /* font family */
   --ff-family-prim: "Plus Jakarta Sans", sans-serif;
 
+  /* font weight */
+  --fw-regular: 500;
+  --fw-bold: 700;
+
   /* font size */
-  --fs-s: 1.5rem;
-  --fs-m: 1.625rem;
-  --fs-l: 2.25rem;
+  --fs-200: 0.875rem;
+  --fs-300: 1.5rem;
+  --fs-400: 1rem;
+  --fs-450: 1.125rem;
+  --fs-500: 1.5rem;
+  --fs-600: 1.625rem;
+  --fs-650: 2rem;
+  --fs-700: 2.25rem;
+  --fs-800: 2.5rem;
+  --fs-900: 2.75rem;
+  --fs-1000: 3.5rem;
+
+  --fs-body: var(--fs-400);
+  --fs-primary-heading: var(--fs-700);
+  --fs-second-heading: var(--fs-600);
+  --fs-tertiary-heading: var(--fs-500);
+  --fs-button: var(--fs-200);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-primary-heading: var(--fs-900);
+    --fs-second-heading: var(--fs-650);
+    --fs-body: var(--fs-450);
+    --fs-button: var(--fs-400);
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --fs-primary-heading: var(--fs-1000);
+    --fs-second-heading: var(--fs-800);
+  }
 }
 
 /* Reset */
@@ -61,6 +101,7 @@ textarea,
 select {
   font: inherit;
 }
+/* end of reset */
 
 /* Utility */
 .container {
@@ -82,34 +123,60 @@ select {
   display: flex;
 }
 
+.btn {
+  border-radius: 50px;
+  font-size: var(--fs-button);
+  padding: 0.5rem 1.75rem;
+  border: none;
+  font-weight: var(--fw-bold);
+}
+
+.btn__dark {
+  color: var(--clr-btn-font);
+  background-color: var(--clr-accent-900);
+}
+
+.btn__accent {
+  color: var(--clr-btn-font);
+  background-color: var(--clr-accent-500);
+}
+
+.text-neutral-200 {
+  color: var(--clr-accent-800);
+}
+/* end of Utility */
+
 /* Typography */
-
-.fs-xl {
-  font-size: var(--fs-l);
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+  font-weight: var(--fw-bold);
 }
 
-.fs-m {
-  font-size: var(--fs-m);
+.fs-second-heading {
+  font-size: var(--fs-second-heading);
 }
 
-.fs-s {
-  font-size: var(--fs-s);
-}
-
-.fs-xl,
-.fs-m,
-.fs-s {
-  color: var(--clr-second-900);
-  font-weight: 700;
+.fs-tertiary-heading {
+  font-size: var(--fs-tertiary-heading);
+  color: var(--clr-white);
 }
 
 /* body */
 body {
   background-color: var(--clr-primary-100);
   font-family: var(--ff-family-prim);
-  font-size: 1rem;
-  color: var(--clr-second-800);
+  font-size: var(--fs-body);
+  color: var(--clr-second-900);
   line-height: 1.625;
+}
+
+/* Nav */
+
+.nav {
+  border: solid red 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Intro Section */
@@ -130,15 +197,15 @@ body {
 
 .intro__card-design {
   grid-area: 1 / 1 / 3 / 3;
-  background-color: var(--clr-second-200);
+  background-color: var(--clr-accent-200);
 }
 
 .intro__card-ui {
-  background-color: var(--clr-second-300);
+  background-color: var(--clr-accent-300);
 }
 
 .intro__card-apps {
-  background-color: var(--clr-second-400);
+  background-color: var(--clr-accent-400);
 }
 
 .intro__card-illustration {
@@ -146,10 +213,10 @@ body {
 }
 
 .intro__card-photo {
-  background-color: var(--clr-second-600);
+  background-color: var(--clr-accent-600);
 }
 .intro__card-motion {
-  background-color: var(--clr-second-700);
+  background-color: var(--clr-accent-700);
 }
 
 .intro__card-illustration,
@@ -178,8 +245,8 @@ body {
 /* call to action */
 
 .cta__details {
-  background-color: var(--clr-second-900);
-  color: var(--clr-primary-100);
+  background-color: var(--clr-accent-900);
+  color: var(--text-neutral-100);
   border-radius: 10px;
   padding: 3rem 1.5rem;
   flex-direction: column;
